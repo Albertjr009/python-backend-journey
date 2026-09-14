@@ -1,4 +1,4 @@
-# 60-Day Backend Development Journey
+# Backend Development Journey
 
 ## Day 1
 
