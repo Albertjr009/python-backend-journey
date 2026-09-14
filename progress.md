@@ -23,7 +23,8 @@ Started a command-line inventory management program.
 - Basic program structure
 
 ### Challenges
-Document the things I struggled with today.
+I struggled with writing a few functions (delete, view) in the beginning. I had to take a break and after reading some documentation i was able to complete the task.
+I was unable to create the update() function. I am trying my best possible to stay away from AI a bit.
 
 ### Next
 Continue building the inventory CLI and strengthen Python fundamentals.
