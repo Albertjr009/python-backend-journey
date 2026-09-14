@@ -6,26 +6,26 @@ inventory = []
 def add_product():
     print("\n--- Add a New Product ---")
     
-    # 1. Asking the user for details
+    # Asking the user for details
     name = input("Enter product name: ")
     price = input("Enter product price (GHS): ")
     quantity = input("Enter quantity: ")
     
-    # 2. Packaging all the details into a single "Product Card"
+    # Packaging all the details into a single "Product Card"
     product = {
         "name": name,
         "price": price,
         "quantity": quantity
     }
     
-    # 3. Putting the product card inside the inventory notebook
+    # Putting the product card inside the inventory notebook
     inventory.append(product)
     print(f"Success! {name} has been added.")
 
 def view_products():
     print("\n--- Current Inventory ---")
     
-    # If the notebook is empty, tell the user
+    # If the notebook is empty
     if len(inventory) == 0:
         print("Your inventory is empty.")
     
@@ -36,10 +36,10 @@ def view_products():
 def delete_product():
     print("\n--- Delete a Product ---")
     
-    # 1. Which product does the user want to delete
+    # Which product does the user want to delete
     target_name = input("Enter the name of the product to delete: ").strip()
     
-    # 2. Search through the inventory to find it
+    # Search through the inventory to find it
     for product in inventory:
         # If the product name matches what the user typed...
         if product["name"].lower() == target_name.lower():
@@ -54,7 +54,7 @@ def delete_product():
 def search_product():
     print("\n--- Search for a Product ---")
     
-    # 1. which product they want to search for
+    # which product the user want to search for
     target_name = input("Enter the name of the product to search: ").strip()
     
     
@@ -67,15 +67,38 @@ def search_product():
             
     print(f"Error: Product '{target_name}' not found in inventory.")
 
+
+#the Update function
+def update_product():
+    print("\n--- Update a Product ---")
+    #learnt to target the product by name and update its details
+    target_name = input("Enter the name of the product to update: ").strip()
+
+    for product in inventory:
+        if product["name"].lower() == target_name.lower():
+            print(f"Found: Name: {product['name']} | Price: GHS {product['price']} | Qty: {product['quantity']}") 
+
+            new_name = input("Enter new product name (leave blank to keep current): ")
+            new_price = input("Enter new product price (leave blank to keep current): ")
+            new_quantity = input("Enter new quantity (leave blank to keep current): ")
+
+            product["name"] = new_name if new_name else product["name"]
+            product["price"] = new_price if new_price else product["price"]
+            product["quantity"] = new_quantity if new_quantity else product["quantity"]
+
+            print(f"Success: '{target_name}' has been updated.")
+            return
+
 while True:
     print("\n===== ALBERT'S INVENTORY =====")
     print("1. Add Product")
     print("2. View Products")
     print("3. Delete Product")
     print("4. Search Product") 
-    print("5. Exit")
+    print("5. Update Product")
+    print("6. Exit")
     
-    choice = input("Choose an option (1-5): ")
+    choice = input("Choose an option (1-6): ")
     
     if choice == "1":
         add_product()
@@ -86,15 +109,20 @@ while True:
     elif choice == "4":
         search_product()
     elif choice == "5":
+        update_product()
+    elif choice == "6":
         print("Goodbye!")
         break
     else:
-        print("Invalid choice, please type 1, 2, 3, 4, or 5.")
+        print("Invalid choice, please type 1, 2, 3, 4, 5, or 6.")
+    print("1. Add Product")
+    print("2. View Products")
     print("3. Delete Product")      
     print("4. Search Product")  
-    print("5. Exit")
+    print("5. Update Product")
+    print("6. Exit")
     
-    choice = input("Choose an option (1-5): ")
+    choice = input("Choose an option (1-6): ")
     
     if choice == "1":
         add_product()
@@ -105,7 +133,9 @@ while True:
     elif choice == "4":
         search_product()
     elif choice == "5":
+        update_product()
+    elif choice == "6":
         print("Goodbye!")
         break
     else:
-        print("Invalid choice, please type 1, 2, 3, 4, or 5.")
+        print("Invalid choice, please type 1, 2, 3, 4, 5, or 6.")
