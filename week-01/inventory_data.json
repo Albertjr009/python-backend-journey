@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Milo",
+        "price": 45.0,
+        "quantity": 10
+    },
+    {
+        "name": "Coke",
+        "price": 30.0,
+        "quantity": 20
+    },
+    {
+        "name": "Pepsi",
+        "price": 25.0,
+        "quantity": 15
+    },
+    {
+        "name": "Miksi Choco",
+        "price": 5.5,
+        "quantity": 10
+    }
+]
